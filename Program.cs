@@ -5,7 +5,7 @@ namespace GenetiC
 {
     class DNA
     {
-        public static string GetComplement(string seq)
+        public static string GetComplement(string seq)  // future update, automatically removes spaces from input
         {
             char[] complement = new char[seq.Length];
             for (int i = 0; i < seq.Length; i++)
@@ -88,7 +88,7 @@ namespace GenetiC
             { "AUU", "Isoleucine" }, { "AUC", "Isoleucine" }, { "AUA", "Isoleucine" },
 
             // Methionine (Start)
-            { "AUG", "Methionine (Start)" },
+            { "AUG", "Methionine (START)" },
 
             // Valine
             { "GUU", "Valine" }, { "GUC", "Valine" }, { "GUA", "Valine" }, { "GUG", "Valine" },
@@ -152,8 +152,8 @@ namespace GenetiC
                 if (codonMap.ContainsKey(codon))
                 {
                     string aminoacidPlaceholder = codonMap[codon];
-                    if (aminoacidPlaceholder == "STOP") break;
                     aminoAcids.Add(aminoacidPlaceholder);
+                    if (aminoacidPlaceholder == "STOP") break;  // Display STOP before terminating the translation.
                 }
                 else
                 {
