@@ -171,8 +171,6 @@ namespace GenetiC
             Console.Write("Enter the DNA leading strand: ");
             string dna = Console.ReadLine().ToUpper();
 
-            Console.WriteLine("to me... crazy frog is just normal frog...");
-
             string compDNA = DNA.GetComplement(dna);
             Console.WriteLine("Complementary DNA: " + compDNA);
 
